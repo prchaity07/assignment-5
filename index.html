@@ -13,32 +13,43 @@
 
     <!-- tailwind CDN here -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <!-- navbar -->
-        <nav class="flex flex-col md:flex-row justify-between mx-auto px-4 md:px-[60px]">
-            <div class=" flex justify-center  items-center gap-3 mb-4 ">
+    <!-- navbar -->
+    <nav class="flex flex-col md:flex-row justify-between mx-auto px-4 md:px-[60px]">
+        <div class=" flex justify-center  items-center gap-3 mb-4 ">
                 <img class="w-12" src="./assets/logo.png" alt="bangladesh govt. logo">
                 <p class="text-[#006747] font-extrabold text-2xl">Emergency <br> Service</p>
+        </div>
+
+        <div class="flex justify-between gap-5 items-center text-center">
+            <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
+                <p >0</p>
+                <img  class="w-5" src="./assets/heart.png" alt="">
             </div>
 
-            <div class="flex justify-between gap-5 items-center text-center">
-                <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
-                    <p >0</p>
-                    <img  class="w-5" src="./assets/heart.png" alt="">
-                </div>
-
-                <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
-                    <p>100</p>
-                    <img  class="w-5" src="./assets/coin.png" alt="">
-                </div>
-
-
-                <button class="btn bg-[#00A63E] text-[#FFFFFF] rounded-[50px] px-[36px] py-[14px]">Copy</button>
+            <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
+                <p>100</p>
+                <img  class="w-5" src="./assets/coin.png" alt="">
             </div>
-        </nav>
-    </header>
+
+            <button class="btn bg-[#00A63E] text-[#FFFFFF] rounded-[50px] px-[36px] py-[14px]">Copy</button>
+        </div>
+    </nav>
+    <main>
+    <!-- banner section -->
+<section class="mx-auto flex flex-col justify-center text-center items-center bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] py-5">
+        <img class="w-9 " src="./assets/logo-dark.png" alt="">
+        <h1 class="font-bold text-[40px] text-[#FFFFFF]">Emergency Service Directory</h1>
+        <p class="text-[#FFFFFF] font-semibold text-[20px]">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+    </section>
+    
+
+
+    </main>
 
     <!-- js code file here -->
     <script src="./script/script.js"></script>
