@@ -49,13 +49,16 @@ for (const card of cards) {
 
     // call btn
     callBtn.addEventListener('click', function(){
+            
         if (coinCount < 20) {
             alert("Not enough coins❗");
             return;
         }
         coinCount = coinCount - 20;
         coinCountElement.innerText = coinCount;
-        
+            alert("Calling Service: " + serviceName.innerText + 
+            "\n📞Hotline: " + hotlineElement.innerText);
+
         const callHistoryEntry = document.createElement('div');
         callHistoryEntry.innerHTML = `
             <div class="flex justify-between items-center px-10 py-5">
