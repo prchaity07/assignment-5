@@ -1,7 +1,6 @@
 // get element function by id
 function getElement(id){
-    const element = document.getElementById(id)
-    return element;
+    return document.getElementById(id);
 }
 
 // Id section for get access parent id
@@ -21,33 +20,71 @@ let copyCount = 0;
 const cards = document.getElementsByClassName('service-card');
 for (const card of cards) {
 
-    const heartIcon = card.getElementsByClassName("heart-icon")[0];
-    const copyBtn = card.getElementsByClassName("copy-btn")[0];
-    const callBtn = card.getElementsByClassName("call-button")[0];
-    const serviceName = card.getElementsByClassName("service-name")[0];
-    const hotlineElement = card.getElementsByClassName("hotline-number")[0]
+    const heartIcon = card.querySelector(".heart-icon");
+    const copyBtn = card.querySelector(".copy-btn");
+    const callBtn = card.querySelector(".call-button");
+    const serviceName = card.querySelector(".service-name");
+    const hotlineElement = card.querySelector(".hotline-number");
 
-        // heart count btn
-        heartIcon.addEventListener('click',function(){
-            heartCount = heartCount + 1;
-            heartCountElement.innerText = heartCount;
-        })
+    // heart count btn
+    heartIcon.addEventListener('click', function(){
+        heartCount = heartCount + 1;
+        heartCountElement.innerText = heartCount;
+    });
 
-        // copy count btn
-        copyBtn.addEventListener('click',function(){
-            const number = hotlineElement.innerText;
-            alert('You copied hotline number : ' + number)
-            copyCount = copyCount + 1;
-            copyCountElement.innerText = copyCount;
-        })
+    // copy count btn
+    copyBtn.addEventListener('click', function(){
+        const number = hotlineElement.innerText;
 
+        // for clipboard actually my challenge part
+        navigator.clipboard.writeText(number).then(function() {
+            alert('Hotline number copied: ' + number);
+        }).catch(function() {
+            alert('Failed to copy');
+        });
 
+        copyCount = copyCount + 1;
+        copyCountElement.innerText = copyCount;
+    });
 
+    // call btn
+    callBtn.addEventListener('click', function(){
+        if (coinCount < 20) {
+            alert("Not enough coins❗");
+            return;
+        }
+        coinCount = coinCount - 20;
+        coinCountElement.innerText = coinCount;
+        
+        const callHistoryEntry = document.createElement('div');
+        callHistoryEntry.innerHTML = `
+            <div class="flex justify-between items-center px-10 py-5">
+                <div>
+                    <h1 class="font-semibold text-xl">${serviceName.innerText}</h1>
+                    <p class="font-normal text-xl">${hotlineElement.innerText}</p>
+                </div>
+                <div class="font-normal text-xl">
+                    ${new Date().toLocaleTimeString()}
+                </div>
+            </div>
+        `;
 
-
-
-
+        historyList.appendChild(callHistoryEntry);
+    });
 }
+
+// clear history button
+clearHistoryBtn.addEventListener('click', function(){
+    historyList.innerHTML = '';
+});
+
+
+
+
+
+
+
+
 
 
 
