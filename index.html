@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- navbar -->
+    <!-- navbar --> 
     <nav class="flex flex-col lg:flex-row justify-between mx-auto px-4 lg:px-[60px]">
         <div class=" flex justify-center  items-center gap-3 mb-4 ">
                 <img class="w-12" src="./assets/logo.png" alt="bangladesh govt. logo">
@@ -27,16 +27,19 @@
 
         <div class="flex justify-between gap-5 items-center text-center">
             <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
-                <p >0</p>
-                <img  class="w-5" src="./assets/heart.png" alt="">
+                <p id="heart-count" >0</p>
+                <img  class="w-5" heart-icon src="./assets/heart.png" alt="">
             </div>
 
             <div class=" flex justify-between gap-2 font-bold bg-[#41FF6B]/10 py-3 px-9 rounded-[50px]">
-                <p>100</p>
+                <p id="coin-count">100</p>
                 <img  class="w-5" src="./assets/coin.png" alt="">
             </div>
 
-            <button class="btn bg-[#00A63E] text-[#FFFFFF] rounded-[50px] px-[36px] py-[14px]">Copy</button>
+            <div class="flex justify-between gap-2 items-center bg-[#00A63E] font-semibold text-[#FFFFFF] rounded-[50px] px-[36px] ">
+                <p id="copy-count">0</p>
+                <button id="copy-all-btn" class="btn  ">Copy</button>
+            </div>
         </div>
     </nav>
     <main>
@@ -49,148 +52,148 @@
     
         <!-- Helpline Section  -->
     <section class=" bg-[#41FF6B]/30 w-12/12  mx-auto grid grid-cols-1   lg:grid-cols-12 gap-6 px-16 py-6 ">
-        <div class="order-2 lg:order-1 col-span-12 lg:col-span-9 grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-                <div class="card bg-base-100 w-full shadow-sm ">
+        <div id="card-container" class="order-2 lg:order-1 col-span-12 lg:col-span-9 grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
-                <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
-                <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+                <h2 class="card-title font-bold text-2xl">Police Helpline Number</h2>
+                <p class="text-[#5C5C5C] service-name">Police</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
+                <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">Police</p>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
-                <div class="card bg-base-100 w-full shadow-sm ">
+                <div class="card service-card bg-base-100 w-full shadow-sm ">
             <figure class="flex justify-between items-center gap-6 px-8">
                 <img src="./assets/emergency.png"/>
-                <i class="fa-regular fa-heart"></i>
+                <i class="heart-icon fa-regular fa-heart"></i>
             </figure>
             <div class="card-body mt-0 ">
                 <h2 class="card-title font-bold text-2xl">National Emergency Number</h2>
-                <p class="text-[#5C5C5C]">National Emergency</p>
-                <h2 class="font-bold text-2xl">999</h2>
+                <p class="text-[#5C5C5C] service-name">National Emergency</p>
+                <h2 class="font-bold text-2xl hotline-number">999</h2>
                 <p class="bg-[#F2F2F2] text-gray-400 rounded-3xl w-12 text-center">All</p>
-            <div class="card-actions justify-evenly">
-                <div class="badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 ">Copy</div>
-                <div class="badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
+            <div class="copy-button card-actions justify-evenly">
+                <div class="copy-btn badge badge-outline w-[45%] border-2 border-[#D4D6D5] text-center py-3 "><i class=" fa-regular fa-copy"></i>Copy</div>
+                <div class="call-button badge badge-outline w-[45%] bg-[#00A63E] text-[#FFFFFF] rounded-lg px-[36px] py-[14px]">Call</div>
             </div>
         </div>
                 </div>
@@ -199,10 +202,24 @@
 
         <!-- History Section Is Here -->
 
-        <aside class="order-1 lg:order-2 bg-white col-span-12 lg:col-span-3 w-full items-center ">
-            <div  class="grid grid-cols-2 gap-2 lg:grid-cols-2 w-full justify-between items-center mb-4 p-6">
-                <p class="text-lg font-bold flex items-center gap-2"><i class="fa-regular fa-clock"></i>Call History</p>
-                <button id="clearHistoryBtn" class="btn bg-[#00A63E] text-[#FFFFFF] rounded-[50px] px-[36px] py-[14px]">Clear</button>
+        <aside id="history-section" class="order-1 lg:order-2 bg-white col-span-12 lg:col-span-3 w-full items-center ">
+            <div  class="grid grid-cols-2 gap-2 lg:grid-col s-2 w-full justify-between items-center mb-4 p-6">
+                <p class="tecall-button xt-lg font-bold flex items-center gap-2"><i class="fa-regular fa-clock"></i>Call History</p>
+                <button id="clear-history-btn" class="btn bg-[#00A63E] text-[#FFFFFF] rounded-[50px] px-[36px] py-[14px]">Clear</button>
+            </div>
+
+            <div>
+                <div id="history-list">
+                    <div  class="flex justify-between items-center px-10 py-5">
+                        <div>
+                            <h1 class="font-semibold text-xl">Fire Service Number</h1>
+                        <p class="font-normal text-xl">999</p>
+                        </div>
+                        <div class="font-normal text-xl">
+                            11:36:58 AM
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </aside>
@@ -212,6 +229,6 @@
     </main>
 
     <!-- js code file here -->
-    <scri src="./script/script.js"></scri class="text-[#5C5C5C]"pt>
+    <script src="./script/script.js"></script>
 </body>
 </html>
