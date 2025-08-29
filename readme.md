@@ -23,7 +23,7 @@ Event delegation is a technique where I add a single event listener to a parent 
 
 It is useful because it:
 
---  Improves performance: Only have one event listener, which uses less memory.
+-  Improves performance: Only have one event listener, which uses less memory.
 
 - Simplifies code: Don't need to write a loop to attach listeners to many elements.
 
